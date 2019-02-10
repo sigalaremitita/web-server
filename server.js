@@ -1,17 +1,7 @@
 var express= require('express');
 var app= express();
 
-var midleware= {
-    requireA: function(rq,res,next){
-   console.log('private'); 
-   next();
-    },
-loger:  function(req, res,next){
-    var d= new Date();
-console.log(req.method+' time: '+d);
-next();
-}
-};
+var midleware=require('./middleware.js');
 app.use(midleware.loger);
 app.get('/',function(rq,res){
    res.send("index");

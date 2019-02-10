@@ -18,7 +18,7 @@ app.get('/',function(rq,res){
 });
 
  app.get('/hello',midleware.requireA, function(req,res){
-    res.send("welcome");
+    res.send("welcome !");
 });
 
 app.use(express.static(__dirname+'/public'));

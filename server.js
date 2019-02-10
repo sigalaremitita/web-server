@@ -1,5 +1,6 @@
 var express= require('express');
 var app= express();
+var PORT=process.env.PORT || 2000;
 
 var midleware=require('./middleware.js');
 app.use(midleware.loger);
@@ -12,4 +13,6 @@ app.get('/',function(rq,res){
 });
 
 app.use(express.static(__dirname+'/public'));
-app.listen(2000);
+app.listen(PORT, function () {
+	console.log('Express server started on port ' + PORT + '!');
+});
